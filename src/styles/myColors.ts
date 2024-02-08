@@ -1,9 +1,10 @@
 export const myColors = {
     bgr: '#FAFAFA',
-    primary: '#5ED4F6',
+    primary: '#9bc1bc',
     white: '#FDFEFF',
     answerCorrect: '#218380',
     answerWrong: '#f28482',
-    timeleft:"#a2d2ff",
+    timeleft:"#e6ebe0",
     count: "#457b9d",
+    header:"#5ca4a9",
 }

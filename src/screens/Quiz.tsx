@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions, ImageBackground } from 'react-native';
 import { myColors } from '../styles/myColors';
 import { questions } from '../question';
 import Ionicons from '../CustomIcon';
@@ -57,7 +57,8 @@ const Quiz = ({ navigation }) => {
         setSelected(null);
     }
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container}
+            source={require('../assets/bgr_1.png')}>
             <View style={styles.questionContainer}>
                 <View style={styles.timeleft}>
                     <Text style={styles.count}>{count}</Text>
@@ -94,7 +95,7 @@ const Quiz = ({ navigation }) => {
                     </TouchableOpacity>
                 )}
             </View>
-        </View>
+        </ImageBackground>
     );
 };
 
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     questionText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: myColors.primary,
+        color: myColors.header,
         textAlign: 'center',
     },
     answerContainer: {
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
     answerText: {
         fontSize: 16,
         // fontWeight: 'bold',
-        color: myColors.primary,
+        color: myColors.header,
         textAlign: 'center',
     },
     answerTextCorrect: {
@@ -184,7 +185,7 @@ const styles = StyleSheet.create({
     btnText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: myColors.primary,
+        color: myColors.header,
         textAlign: 'center',
     },
     timeleft: {

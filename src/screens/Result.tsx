@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import { questions } from '../question';
 import { myColors } from '../styles/myColors';
 
@@ -7,7 +7,8 @@ const Result = ({ navigation, route }) => {
     const { point } = route.params;
     console.log({ point });
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container}
+            source={require('../assets/bgr_1.png')}>
             <Text style={styles.header}>You've completed the Quiz!</Text>
             <Text style={styles.result}>You got {point} out of {questions.length}</Text>
             <Image style={styles.img}
@@ -21,7 +22,7 @@ const Result = ({ navigation, route }) => {
                     <Text style={styles.btnHomeText}>Home</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </ImageBackground>
     );
 };
 

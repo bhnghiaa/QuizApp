@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { myColors } from '../styles/myColors';
 
 
 
 const RuleQuiz = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container}
+            source={require('../assets/bgr_1.png')}>
             <View style={styles.boxContainer}>
                 <View style={styles.headerContainer}>
                     <Text style={styles.header}>Some Rules of this Quiz</Text>
@@ -27,7 +28,7 @@ const RuleQuiz = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </ImageBackground>
     );
 };
 
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
         backgroundColor: myColors.primary,
     },
     boxContainer: {
-        backgroundColor: myColors.bgr,
+        backgroundColor: myColors.white,
         width: "80%",
         height: '53%',
         borderRadius: 20,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     btnText: {
         fontSize: 15,
         fontWeight: 'bold',
-        color: myColors.white,
+        color: "white",
         textAlign: 'center',
     },
     bottom: {
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     btnHome: {
-        backgroundColor: myColors.white,
+        backgroundColor: myColors.bgr,
         paddingVertical: 10,
         paddingHorizontal: 30,
         borderRadius: 20,
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     btnHomeText: {
         fontSize: 15,
         fontWeight: 'bold',
-        color: myColors.primary,
+        color: myColors.header,
         textAlign: 'center',
     }
 });

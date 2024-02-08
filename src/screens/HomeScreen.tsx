@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, Touchable } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Quiz from './Quiz';
 import { myColors } from '../styles/myColors';
@@ -8,13 +8,14 @@ interface HomeProps { }
 
 const Home = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container}
+            source={require('../assets/background.png')}>
             <Text style={styles.header}>Quiz</Text>
             <LottieView source={require('../assets/banner.json')} autoPlay loop style={styles.banner} />
             <TouchableOpacity onPress={() => navigation.navigate('RuleQuiz')} style={styles.btnContainer}>
                 <LottieView source={require('../assets/btnstart.json')} autoPlay loop style={styles.btnstart} />
             </TouchableOpacity>
-        </View>
+        </ImageBackground>
     );
 };
 
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 40,
         fontWeight: 'bold',
-        color: myColors.primary,
+        color: myColors.header,
         textAlign: 'center',
     },
 });
